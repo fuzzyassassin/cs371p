@@ -2,15 +2,16 @@
 // Test.java
 // ---------
 
-import java.util.Arrays;
+class A {}
+class B extends A {}
 
 final class Test {
 
-    public static void main (String[] args) throws A {
-        System.out.println("Arguments.java");
+    public static void main (String[] args) {
+        System.out.println("Test.java");
 
-        int a[] = {2, 3, 4};
-        for (int v : a)
-            System.out.println(v);
+        A x = new A();
+        B y = new B();
+        System.out.println(x == y);
 
         System.out.println("Done.");}}
