@@ -10,27 +10,27 @@
 
 #include <cassert>  // assert
 #include <iostream> // endl, istream, ostream
-#include <utility>  // pair
+#include <iterator> // istream_iterator
+#include <utility>  // make_pair, pair
 
-#include "Collatz.h"
+#include "Collatz2.h"
 
 // ------------
 // collatz_read
 // ------------
 
-std::pair<int, int> collatz_read (std::istreamiterator& p) {
-    *p >> i;
-    ++p;
-    *p >> j;
-    assert(i > 0);
-    assert(j > 0);
-    return true;}
+std::pair<int, int> collatz_read (std::istream_iterator<int>& q) {
+    int i = *q;
+    ++q;
+    int j = *q;
+    ++q;
+    return std::make_pair(i, j);}
 
 // ------------
 // collatz_eval
 // ------------
 
-int collatz_eval (const std::pair<int, int>& p) {
+int collatz_eval (std::pair<int, int> p) {
     // <your code>
     int v = 1;
     assert(v > 0);
@@ -40,7 +40,7 @@ int collatz_eval (const std::pair<int, int>& p) {
 // collatz_print
 // -------------
 
-void collatz_print (std::ostream& w, const std::pair<int, int>& p, int v) {
+void collatz_print (std::ostream& w, std::pair<int, int> p, int v) {
     w << p.first << " " << p.second << " " << v << std::endl;}
 
 // -------------
@@ -48,10 +48,9 @@ void collatz_print (std::ostream& w, const std::pair<int, int>& p, int v) {
 // -------------
 
 void collatz_solve (std::istream& r, std::ostream& w) {
-    std::istream_iterator b = r;
-    std::istream_iterator e;
+    std::istream_iterator<int> b = r;
+    std::istream_iterator<int> e;
     while (b != e) {
-        std::pair<int, int> p = collatz_read(b);
-        const int           v = collatz_eval(p);
-        collatz.print(w, p, v);
-        ++b;}}
+        const std::pair<int, int> p = collatz_read(b);
+        const int                 v = collatz_eval(p);
+        collatz_print(w, p, v);}}

@@ -12,6 +12,8 @@
 // --------
 
 #include <iostream> // istream, ostream
+#include <iterator> // istream_iterator
+#include <utility>  // pair
 
 // ------------
 // collatz_read
@@ -24,7 +26,7 @@
  * @param j an int by reference
  * @return true if that succeeds, false otherwise
  */
-std::pair<int, int> collatz_read (std::istreamiterator&);
+std::pair<int, int> collatz_read (std::istream_iterator<int>&);
 
 // ------------
 // collatz_eval
@@ -35,7 +37,7 @@ std::pair<int, int> collatz_read (std::istreamiterator&);
  * @param j the end       of the range, inclusive
  * @return the max cycle length in the range [i, j]
  */
-int collatz_eval (const std::pair<int, int>&);
+int collatz_eval (std::pair<int, int>);
 
 // -------------
 // collatz_print
@@ -48,7 +50,7 @@ int collatz_eval (const std::pair<int, int>&);
  * @param j the end       of the range, inclusive
  * @param v the max cycle length
  */
-void collatz_print (std::ostream&, const std::pair<int, int>&, int);
+void collatz_print (std::ostream&, std::pair<int, int>, int);
 
 // -------------
 // collatz_solve
