@@ -3,27 +3,26 @@
 // --------
 
 #include <cassert>  // assert
-#include <cstring>  // strcmp, strcpy
 #include <iostream> // cout, endl
-#include <sstream>  // ostringstream
+#include <string>   // string
 
 using namespace std;
 
-struct Symbol {
-    char* name;
+template <typename T>
+struct A {
+    virtual string f () {
+        return "A::f()";}};
 
-    Symbol (int n) {
-        ostringstream ostr;
-        ostr << n << endl;
-        const char *s = ostr.str().c_str();
-        name = new char[strlen(s)+1];
-        strcpy(name, s);}};
+template <typename T>
+struct B : A<T> {
+    string f () {
+        return "B::f()";}};
 
 int main () {
     cout << "Test.c++" << endl;
 
-    Symbol x(123);
-    assert(strcmp(x.name, "123\n") == 0);
+    A<int>* p = new B<int>;
+    assert(p->f() == "B::f()");
 
     cout << "Done." << endl;
     return 0;}
