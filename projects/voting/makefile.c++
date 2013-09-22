@@ -19,13 +19,13 @@ doc: Voting.c++
 	doxygen Doxyfile
 
 turnin-list:
-	turnin --list aizhuli cs371ppj1
+	turnin --list aizhuli cs371ppj2
 
 turnin-submit: Voting.zip
-	turnin --submit aizhuli cs371ppj1 Voting.zip
+	turnin --submit aizhuli cs371ppj2 Voting.zip
 
 turnin-verify:
-	turnin --verify aizhuli cs371ppj1
+	turnin --verify aizhuli cs371ppj2
 
 Voting.log:
 	git log > Voting.log
