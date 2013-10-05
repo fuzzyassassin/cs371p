@@ -8,21 +8,14 @@
 
 using namespace std;
 
-template <typename T>
-struct A {
-    virtual string f () {
-        return "A::f()";}};
-
-template <typename T>
-struct B : A<T> {
-    string f () {
-        return "B::f()";}};
+void f (int& r, int& s) {
+    cout << (&r == &s) << endl;}
 
 int main () {
     cout << "Test.c++" << endl;
 
-    A<int>* p = new B<int>;
-    assert(p->f() == "B::f()");
+    int i = 2;
+    f(i, i);
 
     cout << "Done." << endl;
     return 0;}
