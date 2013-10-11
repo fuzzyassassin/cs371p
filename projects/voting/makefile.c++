@@ -30,13 +30,13 @@ turnin-verify:
 Voting.log:
 	git log > Voting.log
 
-Voting.zip: makefile                                  \
-             Voting.c++ Voting.h Voting.log           \
-             RunVoting.c++ RunVoting.in RunVoting.out \
-             UVaVoting.c++                            \
-             TestVoting.c++ TestVoting.out
+Voting.zip: makefile                                 \
+            Voting.c++ Voting.h Voting.log           \
+            RunVoting.c++ RunVoting.in RunVoting.out \
+            UVaVoting.c++                            \
+            TestVoting.c++ TestVoting.out
 	zip -r Voting.zip                               \
-	       makefile html/                           \
+	       html/ makefile                           \
            Voting.c++ Voting.h Voting.log           \
            RunVoting.c++ RunVoting.in RunVoting.out \
            UVaVoting.c++                            \
