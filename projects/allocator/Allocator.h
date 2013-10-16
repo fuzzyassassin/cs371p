@@ -87,7 +87,7 @@ class Allocator {
             assert(valid());}
 
         // Default copy, destructor, and copy assignment
-        // Allocator  (const Allocator<T>&);
+        // Allocator  (const Allocator&);
         // ~Allocator ();
         // Allocator& operator = (const Allocator&);
 
