@@ -23,13 +23,5 @@ int main () {
     assert(strcmp(a, b) == 0);
     }
 
-    {
-    char a[4] = "a";
-    strcat(a, "bc");
-    const char* b = "abc";
-    assert(a != b);
-    assert(strcmp(a, b) == 0);
-    }
-
     cout << "Done." << endl;
     return 0;}
