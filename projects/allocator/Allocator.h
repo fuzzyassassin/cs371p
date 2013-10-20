@@ -72,6 +72,14 @@ class Allocator {
             // <your code>
             return true;}
 
+        /**
+         * O(1) in space
+         * O(1) in time
+         * <your documentation>
+         */
+        int& view (int i) {
+            return *reinterpret_cast<int*>(&a[i]);}
+
     public:
         // ------------
         // constructors
@@ -147,14 +155,6 @@ class Allocator {
         void destroy (pointer p) {
             p->~T();               // this is correct
             assert(valid());}
-
-        /**
-         * O(1) in space
-         * O(1) in time
-         * <your documentation>
-         */
-        int& view (int i) {
-            return *reinterpret_cast<int*>(&a[i]);}
 
         /**
          * O(1) in space
