@@ -17,10 +17,14 @@ using namespace std;
 template <typename T, std::size_t N>
 struct Allocator {
     char a[N];
-    ...};
 
-int& view (char& c) {
-    return *reinterpret_cast<int*>(&c);}
+    int& view (int i) {
+        return *reinterpret_cast<int*>(&a[i]);}
+
+    const int& view (int i) const {
+        return *reinterpret_cast<const int*>(&a[i]);}
+
+    ...};
 
 int main () {
     assert(sizeof(double) == 8);
@@ -30,6 +34,6 @@ int main () {
     x.allocate(5);
     x.allocate(3);
 
-    cout << view(x.a[0])  << endl;
-    cout << view(x.a[96]) << endl;
+    cout << x.view(0)  << endl;
+    cout << x.view(96) << endl;
     return 0;}

@@ -146,6 +146,22 @@ class Allocator {
          */
         void destroy (pointer p) {
             p->~T();               // this is correct
-            assert(valid());}};
+            assert(valid());}
+
+        /**
+         * O(1) in space
+         * O(1) in time
+         * <your documentation>
+         */
+        int& view (int i) {
+            return *reinterpret_cast<int*>(&a[i]);}
+
+        /**
+         * O(1) in space
+         * O(1) in time
+         * <your documentation>
+         */
+        const int& view (int i) const {
+            return *reinterpret_cast<const int*>(&a[i]);}};
 
 #endif // Allocator_h
