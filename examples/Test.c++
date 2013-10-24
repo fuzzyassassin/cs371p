@@ -8,14 +8,21 @@
 
 using namespace std;
 
-void f (int& r, int& s) {
-    cout << (&r == &s) << endl;}
+struct A {
+    string f () {
+        return "A::f()";}
+
+    string f () const {
+        return "A::f() const";}};
 
 int main () {
     cout << "Test.c++" << endl;
 
-    int i = 2;
-    f(i, i);
+    A x;
+    assert(x.f() == "A::f()");
+
+    const A& r = x;
+    assert(r.f() == "A::f() const");
 
     cout << "Done." << endl;
     return 0;}
