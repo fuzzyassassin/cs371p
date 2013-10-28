@@ -1,6 +1,6 @@
-// ----------
-// Vector1.c++
-// ----------
+// ---------------------------
+// ConstructorsDestructors.c++
+// ---------------------------
 
 #include <cstddef>   // size_t
 #include <iostream>  // cout, endl
@@ -28,7 +28,7 @@ class my_vector {
 
 int main () {
     using namespace std;
-    cout << "Vector1.c++" << endl;
+    cout << "ConstructorsDestructors.c++" << endl;
 
     {
     my_vector<int> x;
