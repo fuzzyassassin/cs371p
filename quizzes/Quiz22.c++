@@ -42,6 +42,5 @@ int main () {
 
     cout << ( A<int>::si  ==  A<double>::si)  << endl;
     cout << (&A<int>::si  == &A<double>::si)  << endl;
-    cout << (&A<int>().si == &A<double>().si) << endl;
 
     return 0;}
