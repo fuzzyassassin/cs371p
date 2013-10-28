@@ -5,6 +5,7 @@
 #include <cassert>  // assert
 #include <cstring>  // strcmp
 #include <iostream> // cout, endl
+#include <new>      // bad_alloc
 
 int f (int n) {
     if (n == 0)

@@ -11,9 +11,10 @@
 // includes
 // --------
 
-#include <cassert> // assert
-#include <cstddef> // ptrdiff_t, size_t
-#include <new>     // new
+#include <cassert>   // assert
+#include <cstddef>   // ptrdiff_t, size_t
+#include <new>       // bad_alloc, new
+#include <stdexcept> // invalid_argument
 
 // ---------
 // Allocator
@@ -88,6 +89,7 @@ class Allocator {
         /**
          * O(1) in space
          * O(1) in time
+         * throw a bad_alloc exception, if N is less than sizeof(T) + (2 * sizeof(int))
          * <your documentation>
          */
         Allocator () {
@@ -106,10 +108,11 @@ class Allocator {
         /**
          * O(1) in space
          * O(n) in time
-         * <your documentation>
          * after allocation there must be enough space left for a valid block
          * the smallest allowable block is sizeof(T) + (2 * sizeof(int))
          * choose the first block that fits
+         * throw a bad_alloc exception, if allocation fails
+         * <your documentation>
          */
         pointer allocate (size_type n) {
             // <your code>
@@ -150,6 +153,7 @@ class Allocator {
         /**
          * O(1) in space
          * O(1) in time
+         * throw an invalid_argument exception, if pointer is invalid
          * <your documentation>
          */
         void destroy (pointer p) {

@@ -24,11 +24,13 @@ Darwin.log:
 
 Darwin.zip: makefile                          \
                Darwin.c++ Darwin.h Darwin.log \
+               Darwin.pdf                     \
                RunDarwin.c++ RunDarwin.out    \
                TestDarwin.c++ TestDarwin.out
 	zip -r Darwin.zip                     \
 	       html/ makefile                 \
            Darwin.c++ Darwin.h Darwin.log \
+           Darwin.pdf                     \
            RunDarwin.c++ RunDarwin.out    \
            TestDarwin.c++ TestDarwin.out
 
