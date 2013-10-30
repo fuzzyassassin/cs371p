@@ -39,3 +39,9 @@ RunDarwin: Darwin.h Darwin.c++ RunDarwin.c++
 
 RunDarwin.out: RunDarwin
 	valgrind RunDarwin > RunDarwin.out
+
+TestDarwin: Darwin.h Darwin.c++ TestDarwin.c++
+	g++ -pedantic -std=c++0x -Wall Darwin.c++ TestDarwin.c++ -o TestDarwin -lgtest -lpthread -lgtest_main
+
+TestDarwin.out: TestDarwin
+	valgrind TestDarwin > TestDarwin.out
