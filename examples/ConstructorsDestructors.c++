@@ -40,6 +40,7 @@ int main () {
     my_vector<int, allocator<int> > x;
     my_vector<int, allocator<int> > y(10);
     my_vector<int, allocator<int> > z(10, 2);
+    my_vector<int, allocator<int> > t(10, 2, allocator<int>());
     }
 
     cout << "Done." << endl;
