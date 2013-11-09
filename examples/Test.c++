@@ -9,20 +9,15 @@
 using namespace std;
 
 struct A {
-    string f () {
-        return "A::f()";}
+    A (int) {};};
 
-    string f () const {
-        return "A::f() const";}};
+struct B : A {};
 
 int main () {
     cout << "Test.c++" << endl;
 
-    A x;
-    assert(x.f() == "A::f()");
-
-    const A& r = x;
-    assert(r.f() == "A::f() const");
+    A x = 2;
+    cout << &x;
 
     cout << "Done." << endl;
     return 0;}
