@@ -3,8 +3,7 @@ CS371p: Quiz #28 (5 pts) <Chuying>
 */
 
 /* -----------------------------------------------------------------------
- 1. Define the auto-generated default constructor and copy constructor for
-    class A.
+ 1. Define the default constructor and copy constructor for class A.
     (4 pts)
 */
 
