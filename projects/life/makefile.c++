@@ -22,22 +22,24 @@ turnin-verify:
 Life.log:
 	git log > Life.log
 
-Life.zip: makefile                           \
-          AbstractCell.c++ AbstractCell.h    \
-          Handle.h Cell.h                    \
-          ConwayCell.c++ ConwayCell.h        \
-          FredkinCell.c++ FredkinCell.h      \
-          Life.h Life.log Life.pdf           \
-          RunLife.c++ RunLife.in RunLife.out \
+Life.zip: makefile                                          \
+          AbstractCell.c++ AbstractCell.h                   \
+          Handle.h Cell.h                                   \
+          ConwayCell.c++ ConwayCell.h                       \
+          FredkinCell.c++ FredkinCell.h                     \
+          Life.h Life.log Life.pdf                          \
+          RunLifeConway.in RunLifeFredkin.in RunLifeCell.in \
+          RunLife.c++ RunLife.out                           \
           TestLife.c++ TestLife.out
-	zip -r Life.zip                           \
-           html/ makefile                     \
-           AbstractCell.c++ AbstractCell.h    \
-           Handle.h Cell.h                    \
-           ConwayCell.c++ ConwayCell.h        \
-           FredkinCell.c++ FredkinCell.h      \
-           Life.h Life.log Life.pdf           \
-           RunLife.c++ RunLife.in RunLife.out \
+	zip -r Life.zip                                          \
+           html/ makefile                                    \
+           AbstractCell.c++ AbstractCell.h                   \
+           Handle.h Cell.h                                   \
+           ConwayCell.c++ ConwayCell.h                       \
+           FredkinCell.c++ FredkinCell.h                     \
+           Life.h Life.log Life.pdf                          \
+           RunLifeConway.in RunLifeFredkin.in RunLifeCell.in \
+           RunLife.c++ RunLife.out                           \
            TestLife.c++ TestLife.out
 
 RunLife: Life.h Life.c++ RunLife.c++
