@@ -6,7 +6,7 @@
 
 /*
 To run the program:
-    % g++ -pedantic -std=c++0x -Wall AbstractCell.c++ ConwayCell.c++ FredkinCell.c++ -o RunLife
+    % g++ -pedantic -std=c++0x -Wall AbstractCell.c++ Cell.c++ ConwayCell.c++ FredkinCell.c++ -o RunLife
     % valgrind RunLife > RunLife.out
 
 To configure Doxygen:
