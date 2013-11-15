@@ -56,15 +56,13 @@ class Handle {
         Handle (pointer q) {
             _p = new count(q);}
 
-        Handle (const Handle& that) {
-            if (!that._p)
-                _p = 0;
-            else {
-                _p = that._p;
-                ++_p->_c;}}
+        Handle (const Handle& rhs) {
+            _p = rhs._p
+            if (_p)
+                ++_p->_c;}
 
         ~Handle () {
-            if (!--_p->_c)
+            if (--_p->_c == 0)
                 delete _p;}
 
         Handle& operator = (Handle that) {

@@ -4,8 +4,10 @@ config:
 	git config -l
 
 count:
-	ls -al | grep "TestLife.c++" | wc
-	ls -al | grep "TestLife.out" | wc
+	ls -al | grep "RunCollatz.in"  | wc
+	ls -al | grep "RunCollatz.out" | wc
+	ls -al | grep "TestLife.c++"   | wc
+	ls -al | grep "TestLife.out"   | wc
 
 log:
 	git log
