@@ -57,7 +57,7 @@ class Handle {
             _p = new count(q);}
 
         Handle (const Handle& rhs) {
-            _p = rhs._p
+            _p = rhs._p;
             if (_p)
                 ++_p->_c;}
 
